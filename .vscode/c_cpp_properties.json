@@ -1,0 +1,26 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/albeb/exproblab_ws/install/turtlesim/include/**",
+        "/home/albeb/exproblab_ws/install/ros2_aruco_interfaces/include/**",
+        "/home/albeb/exproblab_ws/install/cv_bridge/include/**",
+        "/opt/ros/foxy/include/**",
+        "/home/albeb/exproblab_ws/src/assignment_1/include/**",
+        "/home/albeb/exproblab_ws/src/cv_bridge/include/**",
+        "/home/albeb/exproblab_ws/src/ros_tutorials/turtlesim/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
