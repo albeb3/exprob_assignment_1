@@ -39,11 +39,7 @@ def generate_launch_description():
     	name='aruco_node'
     )
 	
-    camera_vel_controller = Node(
-        package="controller_manager",
-        executable="spawner.py",
-        arguments=["camera_velocity_controller"]
-    )
+    
     camera_vel_pub= Node(
         package='assignment_1_camera',
         executable='camera_vel_pub.py',
@@ -55,17 +51,21 @@ def generate_launch_description():
         executable='node_controller.py',
         name='node_controller'
     )
-    
+     # GAZEBO_MODEL_PATH has to be correctly set for Gazebo to be able to find the model
+    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
+                        arguments=['-entity', 'robot_assignment_1_camera', '-topic', '/robot_description'],
+                        output='screen')
     broad = Node(
         package="controller_manager",
         executable="spawner.py",
         arguments=["joint_broad"]
     )
-    
-    # GAZEBO_MODEL_PATH has to be correctly set for Gazebo to be able to find the model
-    spawn_entity = Node(package='gazebo_ros', executable='spawn_entity.py',
-                        arguments=['-entity', 'robot_assignment_1_camera', '-topic', '/robot_description'],
-                        output='screen')
+    camera_vel_controller = Node(
+        package="controller_manager",
+        executable="spawner.py",
+        arguments=["camera_vel_controller"]
+    )
+   
 
     return LaunchDescription([
         DeclareLaunchArgument(name='model', default_value=default_model_path,

@@ -25,7 +25,8 @@ find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(image_transport REQUIRED)
 find_package(OpenCV REQUIRED)
-
+find_package(ros2_aruco_interfaces REQUIRED)
+find_package(geometry_msgs REQUIRED)
 # Include Cpp "include" directory
 include_directories(include)
 

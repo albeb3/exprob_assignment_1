@@ -55,6 +55,7 @@ class NodeController(Node):
   
     
     def listener_aruco_markers_callback(self, msg):
+        
         self.selected_marker_id=msg.marker_ids[0]
         self.action_pub.publish(self.action)
         
@@ -115,8 +116,8 @@ class NodeController(Node):
         # Converti l'immagine ROS in un formato OpenCV
         cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
         if self.trigger_image==1 and self.selected_marker_id not in self.marker_showed_list and abs(self.sub_pos_marker_x_on_camera)<0.05 :
-            self.get_logger().info(f'Markers ID STAMPATO: {self.selected_marker_id}')
-            self.get_logger().info(f'Markers ID DI CONTROLLO: {self.marker_list[0]}')
+            #self.get_logger().info(f'Markers ID STAMPATO: {self.selected_marker_id}')
+            #self.get_logger().info(f'Markers ID DI CONTROLLO: {self.marker_list[0]}')
             if self.selected_marker_id == self.marker_removed_list[-1]:
                 self.marker_showed_list.append(self.selected_marker_id)
                 # Mostra l'immagine con il cerchio
